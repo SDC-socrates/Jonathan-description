@@ -3,9 +3,9 @@ const parser = require('body-parser');
 const db = require('./db/index.js');
 
 let app = express();
-app.set('port', 3000);
+app.set('port', 3333);
 app.use(parser.json());
-app.use(express.static(__dirname + '../public'));
+app.use(express.static(__dirname + '/../public'));
 
 app.get('/api/turash/description/:id', function(req, res) {
   var id = req.params.id;
@@ -17,3 +17,6 @@ app.get('/api/turash/description/:id', function(req, res) {
 app.listen(app.get('port'), function() {
   console.log('Listening on port ', app.get('port'));
 });
+
+
+
