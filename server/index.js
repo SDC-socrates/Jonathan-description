@@ -1,22 +1,20 @@
 const express = require('express');
 const parser = require('body-parser');
+const path = require('path');
 const db = require('./db/index.js');
 
-let app = express();
+const app = express();
 app.set('port', 3333);
 app.use(parser.json());
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(path.join(__dirname, '/../public')));
 
-app.get('/api/turash/description/:id', function(req, res) {
-  var id = req.params.id;
-  db.getData(id, function(data) {
+app.get('/api/turash/description/:id', (req, res) => {
+  const { params: { id } } = req;
+  db.getData(id, (data) => {
     res.send(data);
   });
 });
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
   console.log('Listening on port ', app.get('port'));
 });
-
-
-
