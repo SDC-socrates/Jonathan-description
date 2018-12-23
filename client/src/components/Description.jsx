@@ -7,7 +7,7 @@ const Description = (props) => {
   const Container = styled.div`
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: auto auto auto 1fr auto 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     font-family: Helvetica;
   `;
 

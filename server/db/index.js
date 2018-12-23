@@ -22,7 +22,7 @@ connection.query('delete from carInfo;', (err) => {
 // insert 100 mock data into dabase
 for (i = 1; i < 101; i += 1) {
   const queryString = 'insert into carInfo (id, companyName, carName, trips, mpg, gas, doors, seats, description, business, features, extras, guidelines, faq) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
-  const queryArgs = [i, faker.name.firstName(), faker.name.findName(), faker.random.number({ min: 10, max: 100 }), faker.random.number({ min: 16, max: 30 }), 'Gas (Premium)', faker.random.arrayElement([2, 4]), faker.random.arrayElement([2, 4, 5, 6, 7]), faker.lorem.paragraph(), 'This host caters to business travelers.', 'Automatic transmission', faker.lorem.sentences(), faker.lorem.paragraph(), faker.lorem.paragraphs()];
+  const queryArgs = [i, faker.name.firstName(), faker.name.findName(), faker.random.number({ min: 10, max: 100 }), faker.random.number({ min: 16, max: 30 }), 'Gas (Premium)', 4, faker.random.arrayElement([2, 4, 5, 6, 7]), faker.lorem.paragraphs(), 'This host caters to business travelers.', 'Automatic transmission', faker.lorem.paragraphs(), faker.lorem.paragraphs(), faker.lorem.paragraphs()];
   connection.query(queryString, queryArgs, (err) => {
     if (err) { throw err; }
   });
