@@ -7,6 +7,7 @@ CREATE TABLE carInfo (
   id int NOT NULL AUTO_INCREMENT,
   companyName varchar(20) NOT NULL,
   carName varchar(50) NOT NULL,
+  edition varchar(50) NOT NULL,
   trips int NOT NULL,
   mpg int NOT NULL,
   gas varchar(20) NOT NULL,
