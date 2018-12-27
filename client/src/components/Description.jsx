@@ -5,7 +5,7 @@ const Description = (props) => {
 
   const Container = styled.div`
     display: grid;
-    grid-template-columns: 20% 40%;
+    grid-template-columns: 20% 40% 1.5%;
     grid-template-rows: auto auto auto auto 1fr% 1fr 1fr 1fr 1fr 1fr 1fr;
     font-family: Helvetica;
   `;
@@ -33,10 +33,9 @@ const Description = (props) => {
     font-family: 'Abril Fatface', cursive;
   `;
 
-  const Year = styled.div`
-    grid-column: 2 / 3;
+  const Year = styled.span`
+    grid-column: 3 / 4;
     grid-row: 2 / 3;
-    margin-left: 300px;
     margin-top: 15px;
   `;
 
@@ -192,9 +191,9 @@ const Description = (props) => {
   `;
 
   const Popup = styled.a`
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
     grid-row: 9 / 10;
-    margin-left: 480px;
+    justify-self: end;
   `;
 
   const G1 = styled.div`
@@ -260,7 +259,7 @@ const Description = (props) => {
       <Img5 src="images/features.png"></Img5>
       <E1>EXTRAS</E1>
       <E2>{props.car[12]}</E2>
-      <Popup href='#popup1'><img href='#popup1' src="images/q.png"></img></Popup>
+      <Popup href='#popup2'><img href='#popup1' src="images/q.png"></img></Popup>
       <G1>GUIDELINES</G1>
       <G2>{props.car[13]}</G2>
       <Faq>FAQS</Faq>
@@ -272,7 +271,6 @@ const Description = (props) => {
 
 export default Description;
 
-// require('./images/mpg.png')
 
 
 

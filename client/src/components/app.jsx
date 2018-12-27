@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Description from './Description.jsx';
+import Popup from './Popup.jsx';
 import axios from 'axios';
 import styled from 'styled-components';
 
@@ -10,8 +11,6 @@ class App extends React.Component {
     this.state = {
       car: []
     }
-
-    this.handleQClick.bind(this);
   }
 
   componentDidMount() {
@@ -36,25 +35,11 @@ class App extends React.Component {
     });
   }
 
-  handleQClick(event) {
-    event.preventDefault();
-    console.log('clicked');
-
-  }
-
   render() {
     return (
       <div>
-        <Description car={this.state.car} handleQClick={this.handleQClick}/>
-        <div id="popup1" className="overlay">
-          <div className="popup">
-            <h2>Here i am</h2>
-            <a className="close" href="#">&times;</a>
-            <div className="content">
-              Thank to pop me out of that button, but now i'm done so you can close this window.
-            </div>
-          </div>
-        </div>
+        <Description car={this.state.car} />
+        <Popup></Popup>
       </div>
     )
   }
