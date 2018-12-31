@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactTextCollapse from 'react-text-collapse';
 
 const Description = (props) => {
 
   const Container = styled.div`
     display: grid;
     grid-template-columns: 20% 40% 1.5%;
-    grid-template-rows: auto auto auto auto 1fr% 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto 1fr 1fr% 1fr 1fr 1fr 1fr 1fr;
     font-family: Helvetica;
   `;
 
@@ -136,6 +137,8 @@ const Description = (props) => {
     grid-row: 6 / 7;
     margin-left: 10px;
     line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
   `;
 
   const B1 = styled.div`
@@ -188,12 +191,14 @@ const Description = (props) => {
     grid-row: 9 / 10;
     margin-left: 10px;
     line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
   `;
 
   const Popup = styled.a`
     grid-column: 3 / 4;
     grid-row: 9 / 10;
-    justify-self: end;
+    margin-left: 10px;
   `;
 
   const G1 = styled.div`
@@ -209,6 +214,8 @@ const Description = (props) => {
     grid-row: 10 / 11;
     margin-left: 10px;
     line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
   `;
 
   const Faq = styled.div`
@@ -224,6 +231,8 @@ const Description = (props) => {
     grid-row: 11 / 12;
     margin-left: 10px;
     line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
   `;
 
   return (
@@ -250,7 +259,11 @@ const Description = (props) => {
       <Img4 src="./images/seats.png" />
       <Seats>{props.car[8] + ' seats'}</Seats>
       <D1>DESCRIPTION</D1>
-      <D2>{props.car[9]}</D2>
+      <D2>
+        {`${props.car[9]} `}
+        <span id="moreD">{` ${props.car[15]} `}</span>
+        <button id="btn1" onClick={(e) => props.handleMoreClick(e, 'moreD', 'btn1')}>More</button>
+      </D2>
       <B1>BUSINESS CLASS</B1>
       <B2>{props.car[10]}</B2>
       <a href='#popup1'><img href='#popup1' src="images/q.png"></img></a>
@@ -258,18 +271,31 @@ const Description = (props) => {
       <F2>{props.car[11]}</F2>
       <Img5 src="images/features.png"></Img5>
       <E1>EXTRAS</E1>
-      <E2>{props.car[12]}</E2>
+      <E2>
+        {`${props.car[12]} `}
+        <span id="moreE">{` ${props.car[16]} `}</span>
+        <button id="btn2" onClick={(e) => props.handleMoreClick(e, 'moreE', 'btn2')}>More</button>
+      </E2>
       <Popup href='#popup2'><img href='#popup1' src="images/q.png"></img></Popup>
       <G1>GUIDELINES</G1>
-      <G2>{props.car[13]}</G2>
+      <G2>
+        {`${props.car[13]} `}
+        <span id="moreG">{` ${props.car[16]} `}</span>
+        <button id="btn3" onClick={(e) => props.handleMoreClick(e, 'moreG', 'btn3')}>More</button>
+      </G2>
       <Faq>FAQS</Faq>
-      <Faq1>{props.car[14]}</Faq1>
+      <Faq1>
+        {`${props.car[14]} `}
+        <span id="moreF">{` ${props.car[16]} `}</span>
+        <button id="btn4" onClick={(e) => props.handleMoreClick(e, 'moreF', 'btn4')}>More</button>
+      </Faq1>
     </Container>
   )
 }
 
 
 export default Description;
+
 
 
 

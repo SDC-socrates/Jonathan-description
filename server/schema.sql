@@ -13,11 +13,13 @@ CREATE TABLE carInfo (
   gas varchar(20) NOT NULL,
   doors int NOT NULL,
   seats int NOT NULL,
-  description varchar(5000) NOT NULL,
+  description varchar(1000) NOT NULL,
   business varchar(50) NOT NULL,
   features varchar(30) NOT NULL,
-  extras varchar(5000) NOT NULL,
+  extras varchar(1000) NOT NULL,
   guidelines varchar(5000) NOT NULL,
   faq varchar(5000) NOT NULL,
+  moreD varchar(1000) NOT NULL,
+  moreE varchar(1000) NOT NULL,
   PRIMARY KEY (id)
 );

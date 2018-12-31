@@ -11,6 +11,8 @@ class App extends React.Component {
     this.state = {
       car: []
     }
+
+    this.handleMoreClick.bind(this);
   }
 
   componentDidMount() {
@@ -35,10 +37,24 @@ class App extends React.Component {
     });
   }
 
+  handleMoreClick(event, more, btn) {
+    event.preventDefault();
+    var moreText = document.getElementById(more);
+    var btnText = document.getElementById(btn);
+
+    if (btnText.innerText === "More") {
+      btnText.innerText = "Less";
+      moreText.style.display = "inline";
+    } else {
+      btnText.innerText = "More";
+      moreText.style.display = "none";
+    }
+  }
+
   render() {
     return (
       <div>
-        <Description car={this.state.car} />
+        <Description car={this.state.car} handleMoreClick={this.handleMoreClick} handleMoreClick2 = {this.handleMoreClick2}/>
         <Popup></Popup>
       </div>
     )

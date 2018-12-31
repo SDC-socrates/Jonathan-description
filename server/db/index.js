@@ -21,8 +21,8 @@ connection.query('delete from carInfo;', (err) => {
 
 // insert 100 mock data into dabase
 for (i = 1; i < 101; i += 1) {
-  const queryString = 'insert into carInfo (id, companyName, carName, edition, trips, mpg, gas, doors, seats, description, business, features, extras, guidelines, faq) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
-  const queryArgs = [i, 'LUSO', `${faker.name.firstName().toUpperCase()} ${faker.name.lastName().toUpperCase()}`, faker.name.findName(), faker.random.number({ min: 10, max: 100 }), faker.random.number({ min: 16, max: 30 }), `Gas (${faker.random.arrayElement(['Premium', 'Regular'])})`, 4, faker.random.arrayElement([2, 4, 5, 6, 7]), faker.lorem.paragraphs(), 'This host caters to business travelers.', 'Automatic transmission', faker.lorem.paragraphs(), faker.lorem.paragraphs(), faker.lorem.paragraphs()];
+  const queryString = 'insert into carInfo (id, companyName, carName, edition, trips, mpg, gas, doors, seats, description, business, features, extras, guidelines, faq, moreD, moreE) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
+  const queryArgs = [i, 'LUSO', `${faker.name.firstName().toUpperCase()} ${faker.name.lastName().toUpperCase()}`, faker.name.findName(), faker.random.number({ min: 10, max: 100 }), faker.random.number({ min: 16, max: 30 }), `Gas (${faker.random.arrayElement(['Premium', 'Regular'])})`, 4, faker.random.arrayElement([2, 4, 5, 6, 7]), faker.lorem.paragraph(), 'This host caters to business travelers.', 'Automatic transmission', faker.lorem.paragraph(), faker.lorem.paragraph(), faker.lorem.paragraph(), faker.lorem.paragraph(), faker.lorem.paragraph()];
   connection.query(queryString, queryArgs, (err) => {
     if (err) { throw err; }
   });
