@@ -260,9 +260,11 @@ const Description = (props) => {
       <Seats>{props.car[8] + ' seats'}</Seats>
       <D1>DESCRIPTION</D1>
       <D2>
-        {`${props.car[9]} `}
+        {`${props.car[9]}`}
+        <div></div>
+        <span id="trans1">{` ${props.car[17]} `}</span>
         <span id="moreD">{` ${props.car[15]} `}</span>
-        <button id="btn1" onClick={(e) => props.handleMoreClick(e, 'moreD', 'btn1')}>More</button>
+        <button id="btn1" onClick={(e) => props.handleMoreClick(e, 'moreD', 'btn1', 'trans1')}>More</button>
       </D2>
       <B1>BUSINESS CLASS</B1>
       <B2>{props.car[10]}</B2>
@@ -273,21 +275,27 @@ const Description = (props) => {
       <E1>EXTRAS</E1>
       <E2>
         {`${props.car[12]} `}
+        <div></div>
+        <span id="trans2">{` ${props.car[17]} `}</span>
         <span id="moreE">{` ${props.car[16]} `}</span>
-        <button id="btn2" onClick={(e) => props.handleMoreClick(e, 'moreE', 'btn2')}>More</button>
+        <button id="btn2" onClick={(e) => props.handleMoreClick(e, 'moreE', 'btn2', 'trans2')}>More</button>
       </E2>
-      <Popup href='#popup2'><img href='#popup1' src="images/q.png"></img></Popup>
+      <Popup href='#popup2'><img href='#popup2' src="images/q.png"></img></Popup>
       <G1>GUIDELINES</G1>
       <G2>
         {`${props.car[13]} `}
+        <div></div>
+        <span id="trans3">{` ${props.car[17]} `}</span>
         <span id="moreG">{` ${props.car[16]} `}</span>
-        <button id="btn3" onClick={(e) => props.handleMoreClick(e, 'moreG', 'btn3')}>More</button>
+        <button id="btn3" onClick={(e) => props.handleMoreClick(e, 'moreG', 'btn3', 'trans3')}>More</button>
       </G2>
       <Faq>FAQS</Faq>
       <Faq1>
         {`${props.car[14]} `}
+        <div></div>
+        <span id="trans4">{` ${props.car[17]} `}</span>
         <span id="moreF">{` ${props.car[16]} `}</span>
-        <button id="btn4" onClick={(e) => props.handleMoreClick(e, 'moreF', 'btn4')}>More</button>
+        <button id="btn4" onClick={(e) => props.handleMoreClick(e, 'moreF', 'btn4', 'trans4')}>More</button>
       </Faq1>
     </Container>
   )

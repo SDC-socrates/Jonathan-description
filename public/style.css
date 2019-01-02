@@ -8,11 +8,16 @@ a {
   display: none;
 }
 
+#trans1, #trans2, #trans3, #trans4 {
+  opacity: 0.5;
+}
+
 button {
   padding: 5px 10px;
   border: 1px solid;
   font-family: Helvetica;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .overlay {

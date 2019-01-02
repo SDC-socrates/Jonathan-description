@@ -37,17 +37,20 @@ class App extends React.Component {
     });
   }
 
-  handleMoreClick(event, more, btn) {
+  handleMoreClick(event, more, btn, transparent) {
     event.preventDefault();
     var moreText = document.getElementById(more);
     var btnText = document.getElementById(btn);
+    var tranText = document.getElementById(transparent);
 
     if (btnText.innerText === "More") {
       btnText.innerText = "Less";
       moreText.style.display = "inline";
+      tranText.style.opacity = 1;
     } else {
       btnText.innerText = "More";
       moreText.style.display = "none";
+      tranText.style.opacity = 0.5;
     }
   }
 

@@ -21,5 +21,6 @@ CREATE TABLE carInfo (
   faq varchar(5000) NOT NULL,
   moreD varchar(1000) NOT NULL,
   moreE varchar(1000) NOT NULL,
+  sentence varchar(100) NOT NULL,
   PRIMARY KEY (id)
 );
