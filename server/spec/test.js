@@ -25,7 +25,7 @@ test('Able to retrive one data given ID', () => {
 
 
 test('App component renders', () => {
-  const wrapper = shallow(<App />);
+  const wrapper = mount(<App />);
   expect(wrapper.exists()).toBe(true);
 });
 
