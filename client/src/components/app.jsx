@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   getOneData() {
-    axios.get('/api/turash/description/1')
+    axios.get('http://127.0.0.1:3002/api/turash/description/1')
     .then((response) => {
       this.setState({
         car: this.changeToArray(response.data)

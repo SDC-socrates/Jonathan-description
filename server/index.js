@@ -2,10 +2,12 @@ const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
 const db = require('./db/index.js');
+const cors = require('cors');
 
 const app = express();
 app.set('port', 3002);
 app.use(parser.json());
+app.use(cors());
 app.use(express.static(path.join(__dirname, '/../public')));
 
 app.get('/api/turash/description/:id', (req, res) => {
@@ -18,3 +20,4 @@ app.get('/api/turash/description/:id', (req, res) => {
 app.listen(app.get('port'), () => {
   console.log('Listening on port ', app.get('port'));
 });
+
