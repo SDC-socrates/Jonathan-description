@@ -88,16 +88,16 @@ const Popup = (props) => {
           <h1 className="heading">BUSINESS CLASS</h1>
           <a className="close" href="#">&times;</a>
           <Container className="content">
-            <Check src="images/check.png"></Check>
+            <Check src="http://127.0.0.1:3003/images/check.png"></Check>
             <H1>Reliable & responsive</H1>
             <Info1>These hosts have a proven track record, with multiple trips under their belts, quick response times, and strong ratings.</Info1>
-            <Check2 src="images/check.png"></Check2>
+            <Check2 src="http://127.0.0.1:3003/images/check.png"></Check2>
             <H2>No fuzz</H2>
             <Info2>These hosts have high approval and commitment rates for every booking they receive.</Info2>
-            <Check3 src="images/check.png"></Check3>
+            <Check3 src="http://127.0.0.1:3003/images/check.png"></Check3>
             <H3>Curbside convenience</H3>
             <Info3>Hosts will drop off the car curbside at the airport, saving you time and hassle.</Info3>
-            <Check4 src="images/check.png"></Check4>
+            <Check4 src="http://127.0.0.1:3003/images/check.png"></Check4>
             <H4>Fresh off the lot</H4>
             <Info4>All Business Class cars are new model years, with in-vehicle features convenient for busy business travelers.</Info4>
           </Container>
@@ -109,13 +109,13 @@ const Popup = (props) => {
           <a className="close" href="#">&times;</a>
           <div>Make your trip unique by adding any of these optional Extras offered by this host.</div>
           <Container className="content">
-            <Check src="images/check.png"></Check>
+            <Check src="http://127.0.0.1:3003/images/check.png"></Check>
             <H1>Add something extra</H1>
             <Info1>You’ll have the option to add Extras during checkout. After booking, message your host if you have any questions or special requests.</Info1>
-            <Check2 src="images/check.png"></Check2>
+            <Check2 src="http://127.0.0.1:3003/images/check.png"></Check2>
             <H2>Treat them like your own</H2>
             <Info2>Treat Extras like they’re your own, since they’re not covered by your protection plan.</Info2>
-            <Check3 src="images/check.png"></Check3>
+            <Check3 src="http://127.0.0.1:3003/images/check.png"></Check3>
             <H3>Plans changed?</H3>
             <Info3>You can remove an Extra from your trip before it starts by viewing your trip details.</Info3>
           </Container>

@@ -250,13 +250,13 @@ const Description = (props) => {
         <span className="fa fa-star"></span>
       </Star>
       <Trips>{props.car[4] + ' trips'}</Trips>
-      <Img src="./images/mpg.png" />
-      <Img2 src="./images/gas.png" />
+      <Img src="http://localhost:3003/images/mpg.png" />
+      <Img2 src="http://localhost:3003/images/gas.png" />
       <Mpg>{props.car[5] + ' MPG'}</Mpg>
       <Gas>{props.car[6]}</Gas>
-      <Img3 src="./images/doors.png" />
+      <Img3 src="http://localhost:3003/images/doors.png" />
       <Doors>{props.car[7] + ' doors'}</Doors>
-      <Img4 src="./images/seats.png" />
+      <Img4 src="http://localhost:3003/images/seats.png" />
       <Seats>{props.car[8] + ' seats'}</Seats>
       <D1>DESCRIPTION</D1>
       <D2>
@@ -268,10 +268,10 @@ const Description = (props) => {
       </D2>
       <B1>BUSINESS CLASS</B1>
       <B2>{props.car[10]}</B2>
-      <a href='#popup1'><img href='#popup1' src="images/q.png"></img></a>
+      <a href='#popup1'><img href='#popup1' src="http://127.0.0.1:3003/images/q.png"></img></a>
       <F1>FEATURES</F1>
       <F2>{props.car[11]}</F2>
-      <Img5 src="images/features.png"></Img5>
+      <Img5 src="http://localhost:3003/images/features.png"></Img5>
       <E1>EXTRAS</E1>
       <E2>
         {`${props.car[12]} `}
@@ -280,7 +280,7 @@ const Description = (props) => {
         <span id="moreE">{` ${props.car[16]} `}</span>
         <button id="btn2" onClick={(e) => props.handleMoreClick(e, 'moreE', 'btn2', 'trans2')}>More</button>
       </E2>
-      <Popup href='#popup2'><img href='#popup2' src="images/q.png"></img></Popup>
+      <Popup href='#popup2'><img href='#popup2' src="http://localhost:3003/images/q.png"></img></Popup>
       <G1>GUIDELINES</G1>
       <G2>
         {`${props.car[13]} `}
