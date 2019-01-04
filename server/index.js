@@ -5,7 +5,7 @@ const db = require('./db/index.js');
 const cors = require('cors');
 
 const app = express();
-app.set('port', 3002);
+app.set('port', 3003);
 app.use(parser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, '/../public')));
