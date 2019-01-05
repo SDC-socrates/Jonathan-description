@@ -5,10 +5,13 @@ const db = require('./db/index.js');
 const cors = require('cors');
 
 const app = express();
-app.set('port', 3003);
+app.set('port', process.env.PORT || 3003);
 app.use(parser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '/../public')));
+// server will be able to load different endpoints based on ID
+app.use('/', express.static(path.join(__dirname, '../public')));
+app.use(/\/\d+\//, express.static(path.join(__dirname, '../public')));
+// app.use(express.static(path.join(__dirname, '/../public')));
 
 app.get('/api/turash/description/:id', (req, res) => {
   const { params: { id } } = req;
