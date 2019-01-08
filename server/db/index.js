@@ -7,8 +7,10 @@ let i;
 // Create a database connection and export it from this file.
 
 const connection = mysql.createConnection({
-  user: 'root',
-  password: '',
+  host : process.env.RDS_HOSTNAME,
+  user: process.env.RDS_USERNAME || 'root',
+  password: process.env.RDS_PASSWORD || '',
+  // port: process.env.RDS_PORT
   database: 'cars',
 });
 
