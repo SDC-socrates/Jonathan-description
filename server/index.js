@@ -15,7 +15,7 @@ app.use(/\/\d+\//, express.static(path.join(__dirname, '../public')));
 
 app.get('/api/turash/description/:id', (req, res) => {
   const { params: { id } } = req;
-  db.getData(id, (data) => {
+  db.find({}).then( (data) => {
     res.send(data);
   });
 });

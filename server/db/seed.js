@@ -1,11 +1,11 @@
 const faker = require('faker');
 const db = require('./index.js');
-
-
-const carInfo = () => {
-  for (let i = 0; i < 65000; i += 1) {
-    db.CarInfo.create({
-      id: i + 1,
+let n = 0;
+const insertIntoDb = (numOfTimes = 500) => {
+  const reviews = [];
+  for (let i = 0; i < numOfTimes; i += 1) {
+    const info = {
+      id: n,
       companyName: 'LUSO',
       carName: `${faker.name.firstName().toUpperCase()}`,
       edition: faker.name.findName(),
@@ -14,17 +14,30 @@ const carInfo = () => {
       gas: `Gas (${faker.random.arrayElement(['Premium', 'Regular'])})`,
       doors: 4,
       seats: faker.random.arrayElement([2, 4, 5, 6, 7]),
-      description: faker.lorem.paragraph(),
+      description: faker.lorem.sentence() + ' ' + faker.lorem.sentence(),
       business: 'This host caters to business travelers.',
       features: 'Automatic transmission',
-      extras: faker.lorem.paragraph(),
-      guidelines: faker.lorem.paragraph(),
-      faq: faker.lorem.paragraph(),
-      moreD: faker.lorem.paragraph(),
-      moreE: faker.lorem.paragraph(),
-      sentence: faker.lorem.sentence(8),
-    });
+      extras: faker.lorem.sentence() + ' ' + faker.lorem.sentence(),
+      guidelines: faker.lorem.sentence() + ' ' + faker.lorem.sentence(),
+      faq: faker.lorem.sentence() + ' ' + faker.lorem.sentence(),
+      moreD: faker.lorem.sentence() + ' ' + faker.lorem.sentence(),
+      moreE: faker.lorem.sentence() + ' ' + faker.lorem.sentence(),
+      sentence: faker.lorem.sentence(8)
+    }
+    reviews.push(info);
+  }
+
+  let timer = 500;
+  let n = 0;
+  while (n < 10000) {
+    setTimeout(() => { db.CarInfo.bulkCreate(reviews) }, timer);
+    timer += 500;
+    n += 1;
   }
 };
 
-carInfo();
+module.exports = {
+  insertIntoDb
+}
+
+require('make-runnable');
