@@ -4,16 +4,16 @@ const fs = require('fs');
 
 var i = 0;
 var csvStream = csv.createWriteStream({ headers: true }),
-  writableStream = fs.createWriteStream("server/db/output4.csv");
+  writableStream = fs.createWriteStream("csv/output3.csv");
 
 writableStream.on("finish", function () {
   console.log("DONE!");
 });
 
 csvStream.pipe(writableStream);
-while (i < 3000000) {
+while (i < 1000000) {
   csvStream.write({
-    id: 1000000 + i,
+    id: 2000000 + i,
     companyName: 'LUSO',
     carName: `${faker.name.firstName().toUpperCase()}`,
     edition: faker.name.findName(),

@@ -84,13 +84,13 @@ exports.CarInfo = CarInfo;
 
 //run these in terminal to seed the database
 
-// mongoimport --db cars --collection stocks --file output.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output2.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output3.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output4.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output5.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output6.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output7.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output8.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output9.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file output10.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output2.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output3.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output4.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output5.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output6.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output7.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output8.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output9.csv --type csv --headerline
+// mongoimport --db cars --collection stocks --file csv/output10.csv --type csv --headerline

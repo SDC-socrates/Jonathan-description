@@ -12,13 +12,12 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "db": "node ./server/db/index.js",
-    "lint": "eslint ./",
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "test": "jest --verbose",
-    "seed": "node --max-old-space-size=8192 server/db/seed.js insertIntoDb",
-    "createCSV": "node --max-old-space-size=8192 server/db/createCsv.js"
+    "createCSV": "node --max-old-space-size=8192 server/db/createCsv.js",
+    "pgTable": "psql cars < server/db/schema.sql",
+    "pgSeed": "psql cars < server/db/seed.sql"
   },
   "dependencies": {
     "aws-sdk": "^2.383.0",
