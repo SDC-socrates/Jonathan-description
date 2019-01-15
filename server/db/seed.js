@@ -1,11 +1,11 @@
 const faker = require('faker');
 const db = require('./index.js');
-let n = 0;
+let n = 1;
 const insertIntoDb = (numOfTimes = 500) => {
   const reviews = [];
   for (let i = 0; i < numOfTimes; i += 1) {
     const info = {
-      id: n,
+      carId: n,
       companyName: 'LUSO',
       carName: `${faker.name.firstName().toUpperCase()}`,
       edition: faker.name.findName(),
@@ -25,14 +25,15 @@ const insertIntoDb = (numOfTimes = 500) => {
       sentence: faker.lorem.sentence(8)
     }
     reviews.push(info);
+    n += 1;
   }
 
   let timer = 500;
-  let n = 0;
-  while (n < 10000) {
+  let i = 0
+  while (i < 10000) {
     setTimeout(() => { db.CarInfo.bulkCreate(reviews) }, timer);
     timer += 500;
-    n += 1;
+    i += 1;
   }
 };
 
