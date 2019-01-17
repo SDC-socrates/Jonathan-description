@@ -11,11 +11,12 @@ class App extends React.Component {
     this.state = {
       car: []
     }
-
+    this.getOneData = this.getOneData.bind(this);
     this.handleMoreClick.bind(this);
   }
 
   componentDidMount() {
+    console.log('helooooo')
     this.getOneData();
   }
 
@@ -28,15 +29,16 @@ class App extends React.Component {
   getOneData() {
     var id = window.location.pathname.slice(1, window.location.pathname.length - 1);
     if (!id) { id = 1; }
-    axios.get(`http://127.0.0.1:3003/api/turash/description/${id}`)
-    .then((response) => {
-      this.setState({
-        car: this.changeToArray(response.data)
+    axios.get(`/api/turash/description/${id}`)
+      .then((response) => {
+        console.log(response.data, 'RESPONSE')
+        this.setState({
+          car: this.changeToArray(response.data[0])
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
       });
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
   }
 
   handleMoreClick(event, more, btn, transparent) {
@@ -44,7 +46,6 @@ class App extends React.Component {
     var moreText = document.getElementById(more);
     var btnText = document.getElementById(btn);
     var tranText = document.getElementById(transparent);
-
     if (btnText.innerText === "More") {
       btnText.innerText = "Less";
       moreText.style.display = "inline";
@@ -57,9 +58,10 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.car);
     return (
       <div>
-        <Description car={this.state.car} handleMoreClick={this.handleMoreClick} handleMoreClick2 = {this.handleMoreClick2}/>
+        <Description car={this.state.car} handleMoreClick={this.handleMoreClick} handleMoreClick2={this.handleMoreClick2} />
         <Popup></Popup>
       </div>
     )

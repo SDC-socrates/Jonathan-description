@@ -12,12 +12,14 @@ const sequelize = new Sequelize('cars', 'morgangrace', '', {
     acquire: 1000000,
     idle: 10000,
   },
+  benchmark: true,
+  logging: true,
 });
 
-const CarInfo = sequelize.define('carInfo', {
-  carId: Sequelize.INTEGER,
-  companyName: Sequelize.STRING(20),
-  carName: Sequelize.STRING(50),
+const Description = sequelize.define('description', {
+  car_id: { type: Sequelize.INTEGER, primaryKey: true },
+  companyname: Sequelize.STRING(20),
+  carname: Sequelize.STRING(50),
   edition: Sequelize.STRING(50),
   trips: Sequelize.INTEGER,
   mpg: Sequelize.INTEGER,
@@ -30,9 +32,12 @@ const CarInfo = sequelize.define('carInfo', {
   extras: Sequelize.STRING(1000),
   guidelines: Sequelize.STRING(5000),
   faq: Sequelize.STRING(5000),
-  moreD: Sequelize.STRING(1000),
-  moreE: Sequelize.STRING(1000),
-  sentence: Sequelize.STRING(100),
+  mored: Sequelize.STRING(1000),
+  moree: Sequelize.STRING(1000),
+  sentence: Sequelize.STRING(100)
+}, {
+  freezeTableName: true,
+  timestamps: false
 });
 
 sequelize
@@ -47,8 +52,14 @@ sequelize
 
 sequelize.sync();
 
+// const getCarById = (id) => {
+//   sequelize.query(`select * from description where car_id = ${id}`).then((results) => {
+//     return results;
+//   });
+// };
 
-exports.CarInfo = CarInfo;
+
+exports.Description = Description;
 
 //=======================================================================
 
@@ -82,15 +93,19 @@ exports.CarInfo = CarInfo;
 
 // const carInfo = db.model('carInfo', CarInfo);
 
-//run these in terminal to seed the database
 
-// mongoimport --db cars --collection stocks --file csv/output.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output2.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output3.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output4.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output5.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output6.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output7.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output8.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output9.csv --type csv --headerline
-// mongoimport --db cars --collection stocks --file csv/output10.csv --type csv --headerline
+// exports.carInfo = carInfo;
+
+
+// //run these in terminal to seed the database
+
+// // mongoimport --db cars --collection stocks --file csv/output.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output2.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output3.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output4.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output5.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output6.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output7.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output8.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output9.csv --type csv --headerline
+// // mongoimport --db cars --collection stocks --file csv/output10.csv --type csv --headerline

@@ -8,3 +8,7 @@ public/bundle.js
 !.elasticbeanstalk/*.global.yml
 
 package-lock.json
+
+csv/
+
+package-lock.json

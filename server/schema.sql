@@ -22,13 +22,13 @@
 --   sentence varchar(100)
 -- )
 
-\COPY description FROM 'server/db/output1.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output2.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output3.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output4.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output5.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output6.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output7.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output8.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output9.csv'  WITH DELIMITER ',' CSV HEADER;
-\COPY description FROM 'server/db/output10.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output1.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output2.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output3.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output4.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output5.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output6.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output7.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output8.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output9.csv'  WITH DELIMITER ',' CSV HEADER;
+-- \COPY description FROM 'server/db/output10.csv'  WITH DELIMITER ',' CSV HEADER;
