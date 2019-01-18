@@ -12,3 +12,5 @@ package-lock.json
 csv/
 
 package-lock.json
+
+newrelic.js
