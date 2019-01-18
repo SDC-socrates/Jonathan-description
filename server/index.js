@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
@@ -24,8 +25,10 @@ app.use(/\/\d+\//, express.static(path.join(__dirname, '../public')));
 
 app.get('/api/turash/description/:id', (req, res) => {
   let id = req.params.id.split(':')
-  console.log(id)
-  id = Number(id[0])
+  id = Number(id[0]);
+  if (isNaN(id)) {
+    id = 0;
+  }
   db.Description.findAll({ where: {car_id: id}}).then((data) => {
     res.send(data);
   });
