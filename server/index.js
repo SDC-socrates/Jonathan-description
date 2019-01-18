@@ -14,15 +14,6 @@ app.use(cors());
 app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(/\/\d+\//, express.static(path.join(__dirname, '../public')));
 
-// app.get('/api/turash/description/:id', (req, res) => {
-//   let car_id = Number(req.params.id);
-//   db.carInfo.find({'id': car_id}).exec().then( (data) => {
-//     res.send(data);
-//   });
-// });
-
-//postgres
-
 app.get('/api/turash/description/:id', (req, res) => {
   let id = req.params.id.split(':')
   id = Number(id[0]);
