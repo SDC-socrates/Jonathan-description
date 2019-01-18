@@ -1,21 +1,26 @@
+require('newrelic');
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
 const db = require('./db/index.js');
 const cors = require('cors');
+const morgan = require('morgan');
 
 const app = express();
+app.use(morgan('dev'));
 app.set('port', process.env.PORT || 3003);
 app.use(parser.json());
 app.use(cors());
-// server will be able to load different endpoints based on ID
 app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(/\/\d+\//, express.static(path.join(__dirname, '../public')));
-// app.use(express.static(path.join(__dirname, '/../public')));
 
 app.get('/api/turash/description/:id', (req, res) => {
-  const { params: { id } } = req;
-  db.find({}).then( (data) => {
+  let id = req.params.id.split(':')
+  id = Number(id[0]);
+  if (isNaN(id)) {
+    id = 0;
+  }
+  db.Description.findAll({ where: {car_id: id}}).then((data) => {
     res.send(data);
   });
 });
