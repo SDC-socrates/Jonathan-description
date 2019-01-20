@@ -51,3 +51,7 @@ sequelize
 
 
 sequelize.sync();
+
+module.exports = {
+  Description
+};
