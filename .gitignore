@@ -9,10 +9,10 @@ public/bundle.js
 
 package-lock.json
 
-csv/
-
 package-lock.json
 
 newrelic.js
 
 config.yml
+
+csv/

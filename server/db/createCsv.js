@@ -4,7 +4,7 @@ const fs = require('fs');
 
 var i = 0;
 var csvStream = csv.createWriteStream({ headers: true }),
-  writableStream = fs.createWriteStream("csv/output3.csv");
+  writableStream = fs.createWriteStream("csv/output1.csv");
 
 writableStream.on("finish", function () {
   console.log("DONE!");
